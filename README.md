@@ -46,14 +46,12 @@ This is just a warning, and things should work fine.
     opendaylight-user@root>log:tail | grep L2SwitchMainModule
 
 
-You should eventually see the following
+You should eventually see the following:
+
     L2SwitchMain (instance org....) initialized.
 
-<p>navigate to http://192.168.50.70:8181/index.html (username/password is admin/admin)<p>
 
-You should be able to see three openflow switches, labeled openflow:1,
-openflow:2, and openflow:3
-
+<p>From the other ssh window, launch mininet with three switches:</p>
      sudo mn --controller=remote,ip=127.0.0.1 --mac --topo=linear,3 --switch ovsk,protocols=OpenFlow13
     *** Creating network
     *** Adding controller
@@ -69,6 +67,14 @@ openflow:2, and openflow:3
     *** Starting 3 switches
     s1 s2 s3 
     *** Starting CLI:
+    mininet>
+
+<p>Open a web browser and navigate to http://192.168.50.70:8181/index.html (username/password is admin/admin)<p>
+
+You should be able to see three openflow switches, labeled openflow:1, openflow:2, and openflow:3
+
+<p>Use the pingall command in mininet to allow the controller to discover all of the hosts:</p>
+
     mininet> pingall
     *** Ping: testing ping reachability
     h1 -> h2 h3 
@@ -76,3 +82,5 @@ openflow:2, and openflow:3
     h3 -> h1 h2 
     *** Results: 0% dropped (6/6 received)
     mininet> 
+
+<p>You can then hit the reload button on your web browser, and the hosts should now appear</p>
