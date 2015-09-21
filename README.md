@@ -1,11 +1,22 @@
 # odl-meetup-vm
-Vagrant setup for creating a VM to run OpenDaylight Lithium with Mininet
+This repo has a Vagrant setup for creating a VM to run OpenDaylight Lithium with Mininet.
 
- cd distribution-karaf-0.3.1-Lithium-SR1/bin/
- rm -rf ../snapshots/ ../journal/ ../data/*
- ./karaf clean
-karaf: JAVA_HOME not set; results may vary
+I tested this against VirtualBox 4.3.r26 and Vagrant for MAC OSX 1.7.2. You can
+create and launch the VM simply by installing the VirtualBox and Vagrant software,
+cloning this repo, and doing:
+
+    vagrant up
+
+
+<code>
+ # cd distribution-karaf-0.3.1-Lithium-SR1/bin/
+ # rm -rf ../snapshots/ ../journal/ ../data/*
+ # ./karaf clean
+ karaf: JAVA_HOME not set; results may vary
+</code>
                                                                                            
+You should see the following banner appear:
+
     ________                       ________                .__  .__       .__     __       
     \_____  \ ______   ____   ____ \______ \ _____  ___.__.|  | |__| ____ |  |___/  |_     
      /   |   \\____ \_/ __ \ /    \ |    |  \\__  \<   |  ||  | |  |/ ___\|  |  \   __\    
@@ -18,9 +29,16 @@ Hit '<tab>' for a list of available commands
 and '[cmd] --help' for help on a specific command.
 Hit '<ctrl-d>' or type 'system:shutdown' or 'logout' to shutdown OpenDaylight.
 
-opendaylight-user@root>feature:install odl-l2switch-switch-ui
-opendaylight-user@root>log:tail | grep L2SwitchMainModule
-L2SwitchMain (instance org....) initialized.
+
+At the karaf console, enter the following
+
+<code>
+  opendaylight-user@root>feature:install odl-l2switch-switch-ui
+  opendaylight-user@root>log:tail | grep L2SwitchMainModule
+</code>
+
+You should eventually see the following
+  L2SwitchMain (instance org....) initialized.
 
 navigate to http://192.168.50.70:8181/index.html#/login
 username/password is admin/admin
