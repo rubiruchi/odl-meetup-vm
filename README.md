@@ -1,18 +1,27 @@
 # odl-meetup-vm
 This repo has a Vagrant setup for creating a VM to run OpenDaylight Lithium with Mininet.
 
-I tested this against VirtualBox 4.3.r26 and Vagrant for MAC OSX 1.7.2. You can
+I tested this against VirtualBox 4.3.r26 and Vagrant for MAC OSX 1.7.2. It requires a 
+machine that's capable of providing at least 4GB of RAM to the VM, and one CPU. You can
 create and launch the VM simply by installing the VirtualBox and Vagrant software,
 cloning this repo, and doing:
 
     vagrant up
 
+You'll want two ssh sessions into the VM after it's up. You can ssh into the VM
+just by doing
 
+    vagrant ssh
 
-   cd distribution-karaf-0.3.1-Lithium-SR1/bin/
-   rm -rf ../snapshots/ ../journal/ ../data/*
-   ./karaf clean
-   karaf: JAVA_HOME not set; results may vary
+from this directory. Once in, you'll want to start the OpenDaylight controller in
+one of the ssh sessions. You can do this by running the following commands:
+
+    cd distribution-karaf-0.3.1-Lithium-SR1/bin/
+    rm -rf ../snapshots/ ../journal/ ../data/*
+    ./karaf clean
+
+Note: you'll probably see a message sayig "karaf: JAVA_HOME not set; results may vary".
+This is just a warning, and things should work fine.
 
                                                                                            
 <p>You should see the following banner appear:</p>
