@@ -1,9 +1,9 @@
 # odl-meetup-vm
 Vagrant setup for creating a VM to run OpenDaylight Lithium with Mininet
 
-# cd distribution-karaf-0.3.1-Lithium-SR1/bin/
-# rm -rf ../snapshots/ ../journal/ ../data/*
-# ./karaf clean
+ cd distribution-karaf-0.3.1-Lithium-SR1/bin/
+ rm -rf ../snapshots/ ../journal/ ../data/*
+ ./karaf clean
 karaf: JAVA_HOME not set; results may vary
                                                                                            
     ________                       ________                .__  .__       .__     __       
@@ -27,7 +27,7 @@ username/password is admin/admin
 You should be able to see three openflow switches, labeled openflow:1,
 openflow:2, and openflow:3
 
-# sudo mn --controller=remote,ip=127.0.0.1 --mac --topo=linear,3 --switch ovsk,protocols=OpenFlow13
+ sudo mn --controller=remote,ip=127.0.0.1 --mac --topo=linear,3 --switch ovsk,protocols=OpenFlow13
 *** Creating network
 *** Adding controller
 *** Adding hosts:
