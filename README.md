@@ -39,17 +39,14 @@ This is just a warning, and things should work fine.
     Hit '<ctrl-d>' or type 'system:shutdown' or 'logout' to shutdown OpenDaylight.
 
 
-<p>At the karaf console, enter the following<p>
+<p>At the karaf console, enter the following</p>
 
+    opendaylight-user@root>feature:install odl-l2switch-switch-ui
+    opendaylight-user@root>log:tail | grep L2SwitchMainModule
 
-     opendaylight-user@root>feature:install odl-l2switch-switch-ui
-     opendaylight-user@root>log:tail | grep L2SwitchMainModule
-
-
-You should eventually see the following:
+<p>You should eventually see the following:</p>
 
      L2SwitchMain (instance org....) initialized.
-
 
 <p>From the other ssh window, launch mininet with three switches:</p>
      sudo mn --controller=remote,ip=127.0.0.1 --mac --topo=linear,3 --switch ovsk,protocols=OpenFlow13
