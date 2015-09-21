@@ -25,20 +25,20 @@ cloning this repo, and doing:
             \/|__|        \/     \/        \/     \/\/            /_____/      \/          
                                                                                            
 
-<p>Hit '<tab>' for a list of available commands</p>
-<p>and '[cmd] --help' for help on a specific command.</p>
-<p>Hit '<ctrl-d>' or type 'system:shutdown' or 'logout' to shutdown OpenDaylight.</p>
+    Hit '<tab>' for a list of available commands
+    and '[cmd] --help' for help on a specific command.
+    Hit '<ctrl-d>' or type 'system:shutdown' or 'logout' to shutdown OpenDaylight.
 
 
 <p>At the karaf console, enter the following<p>
 
 
-   opendaylight-user@root>feature:install odl-l2switch-switch-ui
-   opendaylight-user@root>log:tail | grep L2SwitchMainModule
+    opendaylight-user@root>feature:install odl-l2switch-switch-ui
+    opendaylight-user@root>log:tail | grep L2SwitchMainModule
 
 
 You should eventually see the following
-   L2SwitchMain (instance org....) initialized.
+    L2SwitchMain (instance org....) initialized.
 
 <p>navigate to http://192.168.50.70:8181/index.html (username/password is admin/admin)<p>
 
