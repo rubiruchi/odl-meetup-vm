@@ -42,7 +42,7 @@ This is just a warning, and things should work fine.
 <p>At the karaf console, enter the following</p>
 
     opendaylight-user@root>feature:install odl-l2switch-switch-ui
-    opendaylight-user@root>log:tail | grep L2SwitchMainModule
+    opendaylight-user@root>log:tail | grep 'L2SwitchMain initialized'
 
 <p>You should eventually see the following:</p>
 

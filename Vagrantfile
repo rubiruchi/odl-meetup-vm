@@ -13,7 +13,7 @@ Vagrant.configure("2") do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
   config.vm.box = "ubuntu/xenial64"
-  #compute.vm.box_url = "./virtualbox.box"
+  config.vm.box_url = "./virtualbox.box"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -24,9 +24,6 @@ Vagrant.configure("2") do |config|
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
   # config.vm.network "forwarded_port", guest: 80, host: 8080
-
-  # Forward ODL's web GUI (DLUX) port so it's accessible on the host machine
-  l2switch.vm.network "forwarded_port", guest: 8181, host: 8181
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
@@ -95,7 +92,8 @@ Vagrant.configure("2") do |config|
     #
     # install OpenDaylight Boron SR1 release
     cp /vagrant/distribution-karaf-0.5.1-Boron-SR1.tar.gz ~
-    unzip -xzvf ~/distribution-karaf-0.5.1-Boron-SR1.tar.gz
+    tar -xzvf ~/distribution-karaf-0.5.1-Boron-SR1.tar.gz
+    chown -R ubuntu:ubuntu /home/ubuntu/distribution-karaf-0.5.1-Boron-SR1
 
     # Install Eclipse IDE
     #cp /vagrant/eclipse-jee-mars-1-linux-gtk-x86_64.tar.gz ~
