@@ -46,7 +46,7 @@ This is just a warning, and things should work fine.
 
 <p>You should eventually see the following:</p>
 
-     L2SwitchMain (instance org....) initialized.
+     ...<bunch of stuff> | L2SwitchMain initialized.
 
 <p>From the other ssh window, launch mininet with three switches:</p>
      sudo mn --controller=remote,ip=127.0.0.1 --mac --topo=linear,3 --switch ovsk,protocols=OpenFlow13
