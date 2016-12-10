@@ -1,7 +1,7 @@
 # odl-meetup-vm
-This repo has a Vagrant setup for creating a VM to run OpenDaylight Lithium with Mininet.
+This repo has a Vagrant setup for creating a VM to run OpenDaylight Boron with Mininet.
 
-I tested this against VirtualBox 4.3.r26 and Vagrant for MAC OSX 1.7.2. It requires a 
+I tested this against VirtualBox 5.1.8 r111374 and Vagrant 1.8.6 for MAC OSX 10.11.6 It requires a
 machine that's capable of providing at least 4GB of RAM to the VM, and one CPU. You can
 create and launch the VM simply by installing the VirtualBox and Vagrant software,
 cloning this repo, and doing:
@@ -16,7 +16,7 @@ just by doing
 from this directory. Once in, you'll want to start the OpenDaylight controller in
 one of the ssh sessions. You can do this by running the following commands:
 
-    cd distribution-karaf-0.3.1-Lithium-SR1/bin/
+    cd ~/distribution-karaf-0.5.1-Boron-SR1/bin/
     rm -rf ../snapshots/ ../journal/ ../data/*
     ./karaf clean
 
@@ -66,7 +66,7 @@ This is just a warning, and things should work fine.
     *** Starting CLI:
     mininet>
 
-<p>Open a web browser and navigate to http://192.168.50.70:8181/index.html (username/password is admin/admin)<p>
+<p>Open a web browser and navigate to http://192.168.50.75:8181/index.html (username/password is admin/admin)<p>
 
 You should be able to see three openflow switches, labeled openflow:1, openflow:2, and openflow:3
 
